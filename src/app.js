@@ -11,7 +11,7 @@ import swaggerUi from 'swagger-ui-express';
 import routes from './routes/index.js';
 import notFound from './middlewares/notFound.js';
 import errorHandler from './middlewares/errorHandler.js';
-import './database/seed.js';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

@@ -1,13 +1,19 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/gestao-de-alunos';
+export async function connectDB() {
+  if (mongoose.connection.readyState >= 1) {
+    return;
+  }
 
-mongoose.connection.on('error', (err) => {
-  console.error('Erro de conexão com o MongoDB:', err.message);
-});
+  const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/gestao-de-alunos';
 
-await mongoose.connect(MONGODB_URI);
-
-console.log(`MongoDB conectado em ${MONGODB_URI}`);
+  try {
+    await mongoose.connect(uri);
+    console.log('MongoDB conectado com sucesso.');
+  } catch (error) {
+    console.error('Erro ao conectar ao MongoDB:', error);
+    throw error;
+  }
+}
 
 export default mongoose;

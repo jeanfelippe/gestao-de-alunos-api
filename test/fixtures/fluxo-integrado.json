@@ -1,0 +1,46 @@
+[
+  {
+    "testTitle": "aluno matriculado registra entrega com sucesso",
+    "nome": "Aluno Fluxo Integrado",
+    "email": "aluno.fluxo.integrado@example.com",
+    "matricula": "2026-FLUXO-01",
+    "senha": "123456",
+    "disciplinaCodigo": "disciplina-matematica",
+    "matricular": true,
+    "titulo": "Trabalho do Fluxo Integrado",
+    "descricao": "Entrega criada pelo aluno cadastrado durante o próprio teste.",
+    "cadastroStatusEsperado": 201,
+    "loginStatusEsperado": 200,
+    "matriculaStatusEsperado": 201,
+    "entregaStatusEsperado": 201
+  },
+  {
+    "testTitle": "segundo aluno matriculado registra entrega com sucesso",
+    "nome": "Maria Souza",
+    "email": "maria.souza.fluxo@example.com",
+    "matricula": "2026-FLUXO-02",
+    "senha": "abc12345",
+    "disciplinaCodigo": "disciplina-matematica",
+    "matricular": true,
+    "titulo": "Lista de Exercícios 3",
+    "descricao": "Resolução dos exercícios do capítulo 3.",
+    "cadastroStatusEsperado": 201,
+    "loginStatusEsperado": 200,
+    "matriculaStatusEsperado": 201,
+    "entregaStatusEsperado": 201
+  },
+  {
+    "testTitle": "aluno sem matrícula na disciplina não consegue registrar entrega",
+    "nome": "Pedro Lima",
+    "email": "pedro.lima.fluxo@example.com",
+    "matricula": "2026-FLUXO-03",
+    "senha": "xyz98765",
+    "disciplinaCodigo": "disciplina-matematica",
+    "matricular": false,
+    "titulo": "Trabalho sem matrícula",
+    "descricao": "Deve ser recusado pela API.",
+    "cadastroStatusEsperado": 201,
+    "loginStatusEsperado": 200,
+    "entregaStatusEsperado": 409
+  }
+]

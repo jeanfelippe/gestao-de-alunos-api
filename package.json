@@ -4,11 +4,12 @@
   "description": "API REST para gestão de alunos, disciplinas, notas e trabalhos, com persistência em MongoDB.",
   "main": "src/server.js",
   "type": "module",
-  "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
-    "test": "mocha test/**/*.test.js --exit"
-  },
+"scripts": {
+  "start": "node src/server.js",
+  "dev": "nodemon src/server.js",
+  "seed": "node src/database/seed.js",
+  "test": "mocha --file test/setup.js \"test/**/*.test.js\" --timeout 10000 --exit"
+},
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -23,9 +24,13 @@
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.6.0",
     "chai": "^6.2.2",
+    "dotenv": "^17.4.2",
     "mocha": "^11.8.0",
+    "mongodb-memory-server": "^11.3.0",
     "nodemon": "^3.1.4",
+    "sinon": "^22.1.0",
     "supertest": "^7.2.2"
   }
 }
